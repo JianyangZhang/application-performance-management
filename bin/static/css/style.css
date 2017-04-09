@@ -1,0 +1,438 @@
+html, body , #apm, #viewContainer,[data-reactroot] {
+  min-height: 100% !important;
+  height: 100%;
+}
+
+.breadcrumb { 
+  list-style: none; 
+  overflow: hidden; 
+  font-size: .9em;
+  margin-top:0px;
+  margin-bottom:0px;
+  padding: 0px;
+  background-color: #466eff;
+}
+.breadcrumb li { 
+  float: left; 
+}
+.breadcrumb li a {
+  color: white;
+  text-decoration: none; 
+  padding: 5px 0 5px 65px;
+  background: #4756dd; 
+  /*background: hsla(34,85%,35%,1); */
+  position: relative; 
+  display: block;
+  float: left;
+}
+
+.breadcrumb li a::after { 
+  content: " "; 
+  display: block; 
+  width: 0; 
+  height: 0;
+  border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
+  border-bottom: 50px solid transparent;
+  border-left: 30px solid #4756dd;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px; 
+  left: 100%;
+  z-index: 2; 
+}
+
+.breadcrumb li:not(:last-child) a::before { 
+  content: " "; 
+  display: block; 
+  width: 0; 
+  height: 0;
+  border-top: 50px solid transparent;       
+  border-bottom: 50px solid transparent;
+  border-left: 30px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px; 
+  margin-left: 1px;
+  left: 100%;
+  z-index: 1; 
+}
+
+.breadcrumb li:first-child a {
+  padding-left: 15px;
+}
+
+.breadcrumb li:last-child a {
+  background-color: #466eff;
+  color: white;
+  padding-right:15px;
+  pointer-events: none;
+  cursor: default;
+}
+.breadcrumb li:last-child a::after { 
+  border: 0; 
+}
+
+
+.rc-menu-btn {
+  position: absolute;
+  left:-25px;
+  top:20px;
+  width:50px;
+  z-index:4;
+  transition:left 0.5s;
+  -moz-transition:left 0.5s; 
+  -webkit-transition:left 0.5s; 
+  -o-transition:left 0.5s; 
+}
+
+.rc-menu-btn.active {
+    left:-2px;
+}
+
+.rc-menu-btn.hidden {
+  display: none;
+}
+
+.view {
+  min-height: 100%;
+  height: 100%;
+  position: relative;
+  // background-color: #f2f2f2 !important;
+}
+
+.box {
+  border:none !important;
+  min-height: 100% !important;
+  height:auto;
+  // background-color: #f2f2f2 !important;
+}
+
+
+
+.view .left.box {
+  padding:0px;
+  max-width:15%;
+  width:15% !important;
+  min-height:100%;
+  height:auto;
+}
+
+.view .left.box.deactive {
+  display: none;
+}
+
+.view .right.box {
+  width:85% !important;
+  min-height: 100% !important;
+  padding-top: 20px;
+  height: 100%;
+  // overflow-y: scroll;
+  // background-color: #f2f2f2 !important;
+}
+
+.tree-bar {
+  font-size:12px;
+  background-color: #2d2e2f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px 15px 15px 15px;
+  transition: none;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-overflow-scrolling: touch;
+  width:100%;
+  height: 100% !important;
+  max-height: 100%;
+  border-radius: 0em !important;
+  margin: 0em !important;
+  overflow-y: auto !important;
+}
+
+.tree-bar-close {
+  position: absolute;
+  top:0px;
+  // right:5px;
+  left:0px;
+  display: block;
+  height: 20px;
+  width:15px;
+  z-index:2;
+  background-color: #2d2e2f;
+  font-size:10px;
+}
+
+.tree-bar-close > a {
+  display: block;
+  text-align: center;
+  line-height: 20px;
+}
+
+.tree-bar .list .item .content .header > a:hover {
+  color:#ffffff !important;
+}
+
+
+.blue-top {
+  border-top: 4px solid #4b90e3 !important;
+}
+
+.green-top  {
+  border-top: 4px solid #bdd979;
+}
+
+.purple-top  {
+  border-top: 4px solid #653793;
+}
+
+.title-line {
+    display: table;
+    white-space: nowrap;
+    text-align: left;
+    line-height: 1;
+    height: auto;
+    font-size: 10px;
+    font-weight: bolder;
+    padding: 0px 0px 0px 0px;
+}
+
+.title-line:after {
+  content: '';
+  display: table-cell;
+  position: relative;
+  bottom:1px;
+  left:5px;
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.text-box .label-line {
+    display: table;
+    white-space: nowrap;
+    text-align: left;
+    line-height: 1;
+    height: auto;
+    font-size: 12px;
+    padding: 0px 10px;
+    width:60%;
+}
+
+.text-box .label-line:after {
+  content: '';
+  display: table-cell;
+  position: relative;
+  bottom:1px;
+  left:5px;
+  width: 100%;
+  border-bottom: 2px dotted #f0f0f0;
+}
+
+.text-box {
+  width: 100%;
+  display: flex;
+  margin-top: 15px;
+  color:#666666;
+}
+
+.text-box .text-value {
+  display: block;
+  font-size: 12px;
+  text-align: left;
+  font-weight: bolder;
+  line-height: 1;
+  width:40%;
+}
+
+.text-box-container .text-box {
+  margin-top: 10px;
+}
+
+.text-box-container .text-box:first-child {
+  margin-top: 0px;
+}
+
+.text-box-container .text-box .label-line {
+  width: 70%;
+}
+
+.text-box-container .text-box .text-value {
+  width: 30%;
+}
+
+.big-text-box {
+  width:50%;
+  height:80px;
+  margin-bottom:20px;
+  padding-top:20px;
+  padding-right:10px;
+  text-align: right;color:#666666
+}
+
+.big-text-box .value {
+  font-size:42px;
+  font-weight: bolder;
+}
+
+.big-text-box .unit {
+  font-size:24px;
+  font-weight: bolder;
+}
+
+.big-text-box .desc {
+  font-size:14px;
+  display: block;
+  margin-top:2px;
+}
+
+.card .content .content-box {
+  width:100%;
+  margin-bottom:20px;
+  margin-top:10px;
+  padding-right:0px;
+  text-align: right;
+  color:#666666;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card .content .text-tag-box {
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card .content .text-tag-box .text-tag {
+  width:50%;
+  margin-bottom:10px;
+}
+
+.card .content .text-tag-box .text-tag .text-tag-value {
+  font-weight: bolder;
+  font-size: 14px;
+  text-align: right;
+}
+
+.card .content .text-tag-box .text-tag .text-tag-label {
+  font-size: 12px;
+  color:#a7acac;
+  text-align: right;
+}
+
+.card.colored > .content {
+  padding:0px !important;
+}
+
+.card.colored > .content .title {
+  height: 35px;
+  line-height:35px;
+  color: #fff;
+  font-size: 12px;
+  border:1px solid #fff;
+  padding: 0px 15px 0px 15px;
+}
+
+.card.colored.purple {
+  border:2px solid #a972cc !important;
+}
+
+.card.colored.purple > .content .title {
+  background-color: #a972cc;
+}
+
+.card.colored.blue {
+  border:2px solid #466eff !important;
+}
+
+.card.colored.blue > .content .title {
+  background-color: #466eff;
+}
+
+.card.colored.green {
+  border:2px solid #4caf50 !important;
+}
+
+.card.colored.green > .content .title {
+  background-color: #4caf50;
+}
+
+.card.colored.red {
+  border:2px solid #dc172a !important;
+}
+
+.card.colored.red > .content .title {
+  background-color: #dc172a;
+}
+
+.card.colored.yellow {
+  border:2px solid #ffe11c !important;
+}
+
+.card.colored.yellow > .content .title {
+  background-color: #ffe11c;
+}
+
+.card.colored.orange {
+  border:2px solid #ff802d !important;
+}
+
+.card.colored.orange > .content .title {
+  background-color: #ff802d;
+}
+
+.process-content {
+  width:100%;
+  display: flex; 
+  flex-flow:row wrap;
+  padding: 10px;
+}
+
+.process-content .text-cell {
+  font-size: 12px;
+  color:#666666;
+  width: 50%;
+  margin-bottom:5px;
+}
+
+.process-content .text-cell .text-cell-value {
+  font-weight: bolder;
+}
+
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+::-webkit-scrollbar  
+{  
+    width: 0.6em;  
+    height: 400px;  
+    background-color: #2d2e2f;  
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track  
+{   
+    border-radius: 0px;  
+    background-color: #272727;  
+}  
+  
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  
+{  
+    border-radius: 0px;  
+    height:50%;
+    border:1px solid @scrollbarThumbBorderColor;
+    background-color: #454545;  
+}
+
+
+::-webkit-input-placeholder { /* WebKit browsers */ 
+color: #D8D9DA !important; 
+} 
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color: #D8D9DA !important; 
+} 
+::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #D8D9DA !important; 
+} 
+:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color: #D8D9DA !important; 
+} 
